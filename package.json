@@ -1,14 +1,14 @@
 {
-  "name": "web-lib",
+  "name": "wc-lib",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "main": "./dist/web-lib.umd.js",
-  "module": "./dist/web-lib.es.js",
+  "main": "./dist/wc-lib.umd.js",
+  "module": "./dist/wc-lib.es.js",
   "exports": {
     ".": {
-      "import": "./dist/web-lib.es.js",
-      "require": "./dist/web-lib.umd.js"
+      "import": "./dist/wc-lib.es.js",
+      "require": "./dist/wc-lib.umd.js"
     },
     "./style.css": "./dist/style.css"
   },

@@ -5,7 +5,7 @@ export default defineConfig({
     lib: {
       entry: 'src/index.ts',
       name: 'WebLib',
-      fileName: (format) => `web-lib.${format}.js`
+      fileName: (format) => `wc-lib.${format}.js`
     },
     rollupOptions: {
       external: [/^lit/],
