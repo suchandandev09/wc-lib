@@ -4,7 +4,7 @@ description: Steps and code conventions required to author a new Web Component
 
 # Creating a Lit Web Component
 
-When creating a new web component in this repository (`wc-lib`), you **must** adhere to the following steps and conventions to ensure styles build globally and components behave predictably in the Light DOM.
+When creating a new web component or updating an existing one in this repository (`wc-lib`), you **must** adhere to the following steps and conventions to ensure styles build globally, components behave predictably in the Light DOM, and changes are well-tested.
 
 ## 1. Directory Structure
 Create a dedicated folder for your component inside `src/components/`, e.g., `src/components/MyComponent/`.
@@ -13,6 +13,7 @@ Inside this folder, you must have:
 - `MyComponent.ts`: The component logic.
 - `MyComponent.scss`: The component styles.
 - `MyComponent.stories.ts`: The Storybook documentation.
+- `MyComponent.test.ts`: The unit test suite.
 
 ## 2. Component Logic (`MyComponent.ts`)
 - Use the `@customElement('wc-[name]')` decorator to register the component.
@@ -67,7 +68,11 @@ declare global {
 - Use BEM-like class mapping or direct nested classes (e.g., `.my-component`).
 - Always use CSS variables mapped from `src/styles/theme.scss` (e.g., `var(--bck-primary)`).
 
-## 4. Registering Styles and Exports
+## 4. Tests (`MyComponent.test.ts`)
+- **Required test creation**: Whenever you create a new component, you must create its accompanying test file to test the component behavior.
+- **Required test updates**: If you change or update the behavior of an existing component, you must evaluate the existing test cases and update them to verify the modifications. We must ensure test coverage is maintained.
+
+## 5. Registering Styles and Exports
 You must expose your component to the library entry points:
 
 1. Add your `.scss` file to `src/styles/global.scss`:
@@ -79,12 +84,12 @@ You must expose your component to the library entry points:
    export * from './components/MyComponent/MyComponent';
    ```
 
-## 5. Storybook Definitions (`MyComponent.stories.ts`)
+## 6. Storybook Definitions (`MyComponent.stories.ts`)
 Create stories representing different states. Use `wc-my-component` in the render function.
 
-## 6. Verification
+## 7. Verification
 // turbo-all
-Once you have created and exported the component, run the local builders to verify no compilation errors occur and the Storybook stories compile smoothly.
+Once you have created and exported the component, run the local builders to verify no compilation errors occur, and run the test suite to ensure the new tests are passing!
 ```bash
 npm run build && npm run build-storybook
 ```
