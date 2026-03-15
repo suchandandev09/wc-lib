@@ -24,21 +24,22 @@
     "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@tabler/icons-webfont": "^3.40.0",
     "lit": "^3.3.2"
   },
   "devDependencies": {
-    "sass": "^1.98.0",
-    "typescript": "~5.9.3",
-    "vite": "^8.0.0",
-    "storybook": "^10.2.19",
-    "@storybook/web-components-vite": "^10.2.19",
     "@chromatic-com/storybook": "^5.0.1",
-    "@storybook/addon-vitest": "^10.2.19",
     "@storybook/addon-a11y": "^10.2.19",
     "@storybook/addon-docs": "^10.2.19",
-    "vitest": "^4.1.0",
-    "playwright": "^1.58.2",
+    "@storybook/addon-vitest": "^10.2.19",
+    "@storybook/web-components-vite": "^10.2.19",
     "@vitest/browser-playwright": "^4.1.0",
-    "@vitest/coverage-v8": "^4.1.0"
+    "@vitest/coverage-v8": "^4.1.0",
+    "playwright": "^1.58.2",
+    "sass": "^1.98.0",
+    "storybook": "^10.2.19",
+    "typescript": "~5.9.3",
+    "vite": "^8.0.0",
+    "vitest": "^4.1.0"
   }
 }

@@ -1,4 +1,5 @@
 import type { Preview } from '@storybook/web-components-vite';
+import '@tabler/icons-webfont/dist/tabler-icons.min.css';
 import '../src/styles/global.scss';
 const preview: Preview = {
   parameters: {
