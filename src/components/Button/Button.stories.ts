@@ -4,7 +4,7 @@ import './Button';
 
 const meta = {
   title: 'Components/Button',
-  component: 'wl-button',
+  component: 'wc-button',
   tags: ['autodocs'],
   argTypes: {
     variant: {
@@ -18,9 +18,9 @@ const meta = {
     label: { control: 'text' },
   },
   render: (args) => html`
-    <wl-button variant=${args.variant} size=${args.size}>
+    <wc-button variant=${args.variant} size=${args.size}>
       ${args.label}
-    </wl-button>
+    </wc-button>
   `,
 } satisfies Meta;
 

@@ -3,6 +3,18 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/web-lib.umd.js",
+  "module": "./dist/web-lib.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/web-lib.es.js",
+      "require": "./dist/web-lib.umd.js"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",

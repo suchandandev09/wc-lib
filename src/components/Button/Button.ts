@@ -8,8 +8,8 @@ import { customElement, property } from 'lit/decorators.js'
  * @slot - This element has a slot for button content
  * @csspart button - The button element
  */
-@customElement('wl-button')
-export class WlButton extends LitElement {
+@customElement('wc-button')
+export class WcButton extends LitElement {
   protected createRenderRoot() {
     return this; // Disable Shadow DOM to use global styles
   }
@@ -35,6 +35,6 @@ export class WlButton extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'wl-button': WlButton
+    'wc-button': WcButton
   }
 }
