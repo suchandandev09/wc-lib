@@ -1,0 +1,18 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Docs/Release History" />
+
+# Release History
+
+Here is a log of recent updates and structural shifts to the `wc-lib` module!
+
+## v0.1.0-alpha (Recent Changes)
+- **Name Change**: Migrated library identifier from `web-lib` to `wc-lib` across entry points and registry bindings.
+- **Icon Strategy**: Introduced `@tabler/icons-webfont` globally to provide robust icon support without relying on bloated SVG interpolation maps.
+- **New Components**:
+  - `wc-link`: A stylized native anchor wrapper supporting custom targets.
+  - `wc-icon`: An atomic instance of a Tabler icon.
+  - `wc-icon-button`: Accessible icon buttons leveraging primary/secondary/ghost theming variants without textual node dependencies.
+- **Workflow Mandates**: Added `.agents/workflows/create-component.md` to establish strict Light DOM parsing constraints and enforced TDD (Test Driven Development) protocols on new component generation.
+- **Testing Architecture**: Introduced robust Vitest/Playwright configurations, migrating testing evaluation away from purely Storybook dependencies to explicitly parse custom `.test.ts` scopes alongside story previews. Added 24 new custom visual tests passing 100%.
+- **Documentation**: Formatted `src/docs/` providing MDX onboarding payloads outlining the architectural differences between Light DOM Lit instances and typical Shadow Component encapsulation.

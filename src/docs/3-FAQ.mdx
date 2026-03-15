@@ -1,0 +1,21 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Docs/FAQ" />
+
+# Frequently Asked Questions
+
+### Why is the Shadow DOM disabled in these components?
+By default, native Web Components use a Shadow DOM to encapsulate their internal markup and CSS. While this is fantastic for isolation, it makes them notoriously difficult to style consistently from an overarching application's global design system (like Tailwind or global SCSS conventions). 
+
+To solve this, our components override `createRenderRoot()` to return `this`. By mounting the markup directly into the **Light DOM**, you can use our baseline `wc-lib` global styles, or seamlessly override them via your own app's `.css` setup.
+
+### How do I pass internal component children if `<slot>` is disabled?
+Because `<slot>` tags only function inside a Shadow DOM, we use a programmatic workaround. All `wc-lib` container components map their immediate Light DOM `childNodes` manually in their typescript `connectedCallback` hook. This array of nodes is then interpolated dynamically into the lit `render()` payload. 
+
+For you as a consumer, **the developer experience is exactly the same**. You just write `<wc-button>Submit</wc-button>` and it works natively!
+
+### What Icon Pack does `wc-lib` utilize?
+We currently integrate with **Tabler Icons**, providing over 5,000 highly consistent, MIT-licensed open-source icons. They are processed via a webfont integration to support dynamic `color` and `size` parsing smoothly across Light DOM component architectures.
+
+### Can I run tests on the components natively?
+Yes! Our internal library is configured with **Vitest** and **Playwright**. Running `npm run test` executes all Playwright-powered browser integration suites authored manually in `.test.ts` files, as well as automatically running programmatic tests based on every single `.stories.ts` variation configuration!

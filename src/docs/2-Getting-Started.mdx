@@ -1,0 +1,48 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Docs/Getting Started" />
+
+# Getting Started
+
+To utilize `wc-lib` in an overarching application, you must handle both the Javascript bundled logic and the global stylesheet parsing.
+
+## 1. Installation
+Ensure the module is installed (or locally linked) into your consuming project:
+
+```bash
+npm install wc-lib
+```
+
+## 2. Importing the Styles
+Because our components render into the Light DOM, they require our design tokens and global layout definitions to function visually.
+
+In your main `index.html` or entry `<head>`, link the bundled global stylesheet:
+```html
+<link rel="stylesheet" href="/node_modules/wc-lib/dist/wc-lib.css" />
+```
+
+Alternatively, you can import it into your root bundler payload (e.g. Next.js `_app.js` or Vite `main.ts`):
+```javascript
+import 'wc-lib/dist/wc-lib.css';
+```
+
+## 3. Importing Components
+Import the specific components you request in your consuming Javascript environment to register their Custom Element tags on the browser window:
+
+```javascript
+// Import everything (Web Components will automatically register)
+import 'wc-lib';
+
+// Or import via specific pathways
+import 'wc-lib/src/components/Button/Button';
+import 'wc-lib/src/components/Link/Link';
+import 'wc-lib/src/components/IconButton/IconButton';
+```
+
+## 4. Execution
+Once registered globally, you can execute the components immediately in your HTML map using the `wc-` prefix:
+
+```html
+<wc-button variant="primary" size="large">Hello World!</wc-button>
+<wc-icon-button name="heart" variant="ghost" ariaLabel="Like"></wc-icon-button>
+```
