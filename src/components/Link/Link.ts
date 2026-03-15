@@ -13,6 +13,15 @@ export class WcLink extends LitElement {
     return this; // Disable Shadow DOM to use global styles
   }
 
+  private _originalChildren: Node[] = [];
+
+  connectedCallback() {
+    if (this._originalChildren.length === 0) {
+      this._originalChildren = Array.from(this.childNodes);
+    }
+    super.connectedCallback();
+  }
+
   /**
    * The URL the link should point to.
    */
@@ -26,7 +35,7 @@ export class WcLink extends LitElement {
   render() {
     return html`
       <a class="link" href="${this.href}" target="${this.target || '_self'}" part="link">
-        <slot></slot>
+        ${this._originalChildren}
       </a>
     `;
   }

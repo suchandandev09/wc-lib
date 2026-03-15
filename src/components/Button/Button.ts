@@ -14,6 +14,16 @@ export class WcButton extends LitElement {
     return this; // Disable Shadow DOM to use global styles
   }
 
+  private _originalChildren: Node[] = [];
+
+  connectedCallback() {
+    // Capture original light DOM children before first render to use in place of <slot>
+    if (this._originalChildren.length === 0) {
+      this._originalChildren = Array.from(this.childNodes);
+    }
+    super.connectedCallback();
+  }
+
   /**
    * The button's theme variant (primary, secondary).
    */
@@ -27,7 +37,7 @@ export class WcButton extends LitElement {
   render() {
     return html`
       <button class="btn ${this.variant} ${this.size}" part="button">
-        <slot></slot>
+        ${this._originalChildren}
       </button>
     `
   }
