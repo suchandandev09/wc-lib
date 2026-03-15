@@ -1,6 +1,6 @@
 ---
 description: Use these instructions when creating or updating Lit web components in this repository.
-applyTo: 'src/components/**,src/styles/global.scss,src/index.ts'
+applyTo: 'src/components/**'
 ---
 
 # Lit Web Component Rules
