@@ -6,3 +6,4 @@ import './styles/global.scss';
 export * from './components/Button/Button';
 export * from './components/Link/Link';
 export * from './components/Icon/Icon';
+export * from './components/IconButton/IconButton';

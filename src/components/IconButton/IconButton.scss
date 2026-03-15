@@ -1,0 +1,65 @@
+.icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-full, 50%); /* Usually icon buttons are circular or square-rounded */
+  padding: var(--space-sm);
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.1s;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+
+  /* Re-use Icon sizing to stay proportionate to the button wrapper */
+  wc-icon {
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--bck-primary);
+    outline-offset: 2px;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &.primary {
+    background-color: var(--bck-primary);
+    color: var(--bck-text-light);
+
+    &:hover {
+      background-color: var(--bck-primary-hover);
+    }
+  }
+
+  &.secondary {
+    background-color: var(--bck-secondary);
+    color: var(--bck-text-light);
+
+    &:hover {
+      background-color: var(--bck-secondary-hover);
+    }
+  }
+
+  &.ghost {
+    background-color: transparent;
+    color: var(--bck-text-main);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05); /* Subtle hover for ghost variant */
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .icon-btn.ghost {
+    color: var(--bck-text-light);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
