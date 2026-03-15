@@ -1,0 +1,26 @@
+@use './theme.scss';
+
+// Components
+@use '../components/Button/Button.scss';
+
+// CSS reset
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family-main);
+  background-color: var(--bck-bg-main);
+  color: var(--bck-text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: var(--font-weight-bold);
+}
+
