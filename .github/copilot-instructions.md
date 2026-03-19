@@ -35,6 +35,7 @@ These instructions apply to all code changes in this repository.
 - <ComponentName>.scss
 - <ComponentName>.stories.ts
 - <ComponentName>.test.ts
+- <ComponentName>.docs.mdx
 
 ## Integration Steps For New Components
 - Add stylesheet import to src/styles/global.scss using @use.
@@ -49,7 +50,10 @@ These instructions apply to all code changes in this repository.
 
 ## Storybook Conventions
 - Use typed meta objects with satisfies Meta.
-- Keep tags: ['autodocs'] unless intentionally removing docs generation.
+- Do not use `tags: ['autodocs']` in story files.
+- Keep stories focused on interactive examples and controls.
+- Store technical documentation in `<ComponentName>.docs.mdx` near the component.
+- Each component `.docs.mdx` must include a `General Overview` section and a `Technical Details` section.
 - Keep stories representative of real usage, including variants and custom content paths.
 
 ## Build And Verification
@@ -63,5 +67,5 @@ These instructions apply to all code changes in this repository.
 - Keep changes focused and consistent with existing naming and file organization.
 
 ## Documentation Sync
-- If component APIs or usage change, update corresponding docs in src/docs/ and relevant stories.
+- If component APIs or usage change, update corresponding component `.docs.mdx` and relevant docs in src/docs/.
 - Keep release notes in src/docs/4-Release-History.mdx aligned with meaningful user-facing changes.

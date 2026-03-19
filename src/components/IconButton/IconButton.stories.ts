@@ -5,7 +5,6 @@ import './IconButton';
 const meta = {
   title: 'Components/IconButton',
   component: 'wc-icon-button',
-  tags: ['autodocs'],
   argTypes: {
     name: { control: 'text', description: 'Tabler icon name (e.g., home, user, settings)' },
     variant: {

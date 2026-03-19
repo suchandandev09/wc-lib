@@ -13,6 +13,7 @@ Create each component under `src/components/<ComponentName>/` with these files:
 - `<ComponentName>.scss`
 - `<ComponentName>.stories.ts`
 - `<ComponentName>.test.ts`
+- `<ComponentName>.docs.mdx`
 
 ## 2) Component Logic (`.ts`)
 - Register with `@customElement('wc-[name]')`.
@@ -35,6 +36,11 @@ Create each component under `src/components/<ComponentName>/` with these files:
 ## 6) Storybook
 - Add stories for representative states.
 - Use the real custom element tag (`wc-[name]`) in story rendering.
+- Do not use `tags: ['autodocs']`.
+- Keep stories focused on interactive examples and controls.
+- Add `<ComponentName>.docs.mdx` for technical documentation.
+- In the MDX file, include a `General Overview` section.
+- In the MDX file, include a `Technical Details` section covering props, behavior, and accessibility.
 
 ## 7) Verification
 After component changes, run:

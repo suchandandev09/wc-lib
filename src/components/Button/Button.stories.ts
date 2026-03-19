@@ -5,7 +5,6 @@ import './Button';
 const meta = {
   title: 'Components/Button',
   component: 'wc-button',
-  tags: ['autodocs'],
   argTypes: {
     variant: {
       control: { type: 'select' },

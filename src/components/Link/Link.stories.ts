@@ -5,7 +5,6 @@ import './Link';
 const meta = {
   title: 'Components/Link',
   component: 'wc-link',
-  tags: ['autodocs'],
   argTypes: {
     href: { control: 'text' },
     target: {

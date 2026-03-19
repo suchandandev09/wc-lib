@@ -5,7 +5,6 @@ import './Icon';
 const meta = {
   title: 'Components/Icon',
   component: 'wc-icon',
-  tags: ['autodocs'],
   argTypes: {
     name: { control: 'text', description: 'Tabler icon name (e.g., home, user, settings)' },
     size: { control: 'number' },

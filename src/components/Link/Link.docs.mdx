@@ -1,0 +1,32 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Components/Link/Doc" />
+
+# Link
+
+`wc-link` wraps native anchor behavior in a styled Light DOM custom element for internal navigation and external destinations.
+
+## Technical Details
+### Element Contract
+- Custom element tag: `wc-link`
+- Render model: Light DOM (Shadow DOM is disabled)
+- Child content strategy: captures light DOM children in `connectedCallback()` and renders them manually
+
+### Properties
+| Property | Type | Default | Allowed Values |
+| --- | --- | --- | --- |
+| `href` | string | `#` | Any valid URL or path |
+| `target` | `_self` \| `_blank` \| `_parent` \| `_top` | `_self` | `_self`, `_blank`, `_parent`, `_top` |
+
+### Behavior Notes
+- When `target` is not provided, the component renders the anchor with `_self`.
+- The component intentionally behaves like a native anchor with additional styling.
+
+### Usage Example
+```html
+<wc-link href="https://lit.dev" target="_blank">Read Lit Docs</wc-link>
+```
+
+### Accessibility Guidance
+- Use descriptive link text that communicates destination or action.
+- Avoid generic labels such as "click here" when possible.

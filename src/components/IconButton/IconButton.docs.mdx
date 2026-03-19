@@ -1,0 +1,36 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Components/IconButton/Doc" />
+
+# IconButton
+
+`wc-icon-button` provides compact icon-only actions with theme variants and explicit accessibility labeling.
+
+## Technical Details
+### Element Contract
+- Custom element tag: `wc-icon-button`
+- Render model: Light DOM (Shadow DOM is disabled)
+- Icon strategy:
+  - Renders internal `<wc-icon>` when `name` is provided
+  - Falls back to captured light DOM children when `name` is empty
+
+### Properties
+| Property | Type | Default | Allowed Values |
+| --- | --- | --- | --- |
+| `name` | string | empty string | Tabler icon names, for example `heart`, `settings`, `trash` |
+| `variant` | string | `primary` | `primary`, `secondary`, `ghost` |
+| `ariaLabel` | string | empty string | Any meaningful accessible label text |
+
+### Behavior Notes
+- `ariaLabel` is mapped to both `aria-label` and `title` on the internal button.
+- Variant classes control color and hover behavior.
+- Child nodes are captured for custom icon content when no `name` is supplied.
+
+### Usage Example
+```html
+<wc-icon-button name="settings" variant="ghost" ariaLabel="Open settings"></wc-icon-button>
+```
+
+### Accessibility Guidance
+- Always provide a meaningful `ariaLabel` for icon-only actions.
+- Ensure icon-only controls have unique labels in repeated UI contexts.

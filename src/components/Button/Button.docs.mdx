@@ -1,0 +1,32 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+
+<Meta title="Components/Button/Doc" />
+
+# Button
+`wc-button` is a reusable action control for primary and secondary user interactions such as form submit actions, dialog confirmations, and workflow progression.
+
+## Technical Details
+### Element Contract
+- Custom element tag: `wc-button`
+- Render model: Light DOM (Shadow DOM is disabled)
+- Child content strategy: captures light DOM children in `connectedCallback()` and renders them manually
+
+### Properties
+| Property | Type | Default | Allowed Values |
+| --- | --- | --- | --- |
+| `variant` | string | `primary` | `primary`, `secondary` |
+| `size` | string | `medium` | `small`, `medium`, `large` |
+
+### Behavior Notes
+- `variant` controls color styling and hover states.
+- `size` controls spacing and font-size scale.
+- Unknown variant/size values are passed as CSS classes and may not have styles.
+
+### Usage Example
+```html
+<wc-button variant="primary" size="medium">Save Changes</wc-button>
+```
+
+### Accessibility Guidance
+- Provide meaningful button text that clearly describes the action.
+- Keep visible text concise and action-oriented.
